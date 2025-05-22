@@ -1,0 +1,411 @@
+@charset "UTF-8";
+
+:root {
+	--bannerWidth: 728px;
+	--bannerHeight: 90px;
+	--isiHeightScreenshot: 90px;
+	--isiPaddingRight: 35px;
+	--bg: #31CAAA;
+	--green: #004F4F;
+	--fontFamily: 'Helvetica', 'Arial', sans-serif;
+	--fontWeightRegular: 400;
+	--fontWeightBold: 800;
+	--fontWeightBlack: 900;
+	--isiFontColor: #202020;
+}
+
+#isi-container div {
+	position: relative;
+	width: 216px;
+	padding-left: 9px;
+}
+
+.banner {
+	border: 1px solid #333333;
+	background: var(--red);
+	overflow: hidden;
+	display: block !important;
+}
+.bannerSize {
+	width: var(--bannerWidth);
+	height: var(--bannerHeight);
+}
+.hide {
+	opacity: 0;
+}
+.underline {
+	text-decoration: underline;
+}
+
+.green {
+	color: #004F4F;
+}
+.retina {
+	background-size: contain !important;
+}
+
+#fpilink {
+	color: #004F4F;
+	text-decoration: underline;
+	font-weight: 600 !important;
+}
+
+/*:::::::::::::::: CONTENTS :::::::::::::*/
+
+#logo {
+	width: 101px;
+	height: 14px;
+	margin: 16px 0 8px 0;
+}
+
+#bg {
+	background: #31CAAA;
+	width: var(--bannerWidth);
+	height: 90px;
+	left: 0;
+	top: 0;
+}
+
+#bgf1 {
+	width: 488px;
+	height: 90px;
+	left: 0;
+	top: 0;
+	background: url('../img/bgf1.png');
+}
+
+#f1txt1 {
+	width: 271px;
+	height: 59px; 
+	left: 82px;
+	top: 22px;
+	opacity: 0;
+	background-image: url('../img/f1txt1.png');
+	background-size: 271px 59px;
+}
+
+/* FRAME 2 */
+
+#bgf2 {
+	width: 488px;
+	height: 90px;
+	left: 488px;
+	top: 0px;
+	background-color: #004F4F;
+}
+
+#f2txt1 {
+	width: calc(406px / 2);
+	height: calc(157px / 2);
+	left: 488px;
+	top: 5px;
+	background-image: url('../img/f2txt1.png');
+	background-size: calc(406px / 2) calc(157px / 2);
+}
+
+/* FRAME 3 */
+
+#bgf3 {
+	width: 488px;
+	height: 275px;
+	left: 0;
+	top: -275px;
+	background: url('../img/bgf3.png');
+}
+
+#f3txt1 {
+	width: 289px;
+	height: 65px; 
+	left: 101px;
+	top: 118px;
+	background-image: url('../img/f3txt1.png');
+	background-size: 289px 65px;
+}
+
+/* FRAME 4 */
+
+#f4txt1 {
+	width: 367px;
+	height: 62px; 
+	left: 60px;
+	top: 22px;
+	opacity: 0;
+	background-image: url('../img/f4txt1.png');
+	background-size: 367px 62px;
+}
+
+/* FRAME 5 */
+
+#bgf5 {
+	width: 488px;
+	height: 327px;
+	left: 0;
+	top: -327px;
+	background: url('../img/bgf5.png');
+}
+
+#f5txt1 {
+	width: calc(406px / 2);
+	height: calc(157px / 2);
+	left: 142px;
+	top: 5px;
+	background-image: url('../img/f5txt1.png');
+	background-size: calc(406px / 2) calc(157px / 2);
+}
+
+/* FRAME 6 */
+/* CTA */
+
+#bg_cta {
+	width: 366px;
+	height: 145px;
+	left: 122px;
+	top: 90px;
+	background: url('../img/bgf6.png');
+	background-size: 366px 145px;
+}
+
+#cta {
+	width: 140px;
+	height: 13px;
+	left: 298px;
+	top: 53px;
+	opacity: 0;
+	background: url('../img/cta.png');
+	background-size: 140px 13px;
+}
+
+#cta_arrow {
+	width: 19px;
+	height: 23px;
+	left: 449px;
+	top: 47px;
+	opacity: 0;
+	background: url('../img/cta_arrow.png');
+	background-size: 19px 23px;
+}
+
+#cta_btn {
+	width: 488px;
+	height: 90px;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+
+/*:::::::::::::::: ISI :::::::::::::*/
+
+#isi {
+	top: 0px;
+	left: 488px;
+	width: 240px;
+	height: var(--isiHeightScreenshot);
+	overflow: hidden;
+	background: white;
+}
+
+#isi-text {
+	width: inherit;
+	top: 0px;
+	height: var(--isiHeightScreenshot);
+	overflow-x: hidden;
+	padding: 5px var(--isiPaddingRight) 0px 9px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+#warming-box {
+	width: 210px !important;
+	border: 1px solid #333333;
+	padding: 8px;
+}
+
+li {
+	font-size: 10px;
+}
+
+li::marker {
+	font-size: 7px;
+}
+
+li span {
+	margin: 2px 0 4px -4px; 
+	display: block;
+}
+
+ul {
+	/* list-style: disc; */
+	padding-left: 20px;
+}
+
+#isi-text ::-webkit-scrollbar {
+	display: none;
+}
+
+#header_ISI,
+#footer_ISI,
+#isi-container {
+	width: calc(var(--bannerWidth) + 30); /* FORMULA: #isi-text: width - #isi-text: paddingLeft - #isi-text: paddingRight */
+	position: relative;
+	padding-bottom: 12px;
+}
+
+#isi-container h3,
+#footer_ISI,
+#isi-container {
+	font-family: var(--fontFamily);
+	-webkit-font-smoothing: antialiased;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-size: 0.625em;
+	line-height: 15px; 
+	color: var(--isiFontColor);
+}
+
+#isi-container p {
+	position: relative;
+	font-family: var(--fontFamily);
+	-webkit-font-smoothing: antialiased;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+#isi-container sup {
+	top: 1px;
+	font-size: .75em;
+	letter-spacing: 0.1px;
+	line-height: 1em;
+	margin-left: 0px;
+	position: relative;
+}
+
+.sub-title {
+	margin: 11px 0 7px 0;
+	font-weight: bold;
+	color: #004F4F;
+}
+
+.black-sub-title {
+	margin: 5px 0;
+	font-weight: bold;
+}
+
+#isi-container .p-tiny-space {
+	margin-bottom: 5px;
+}
+
+#isi-container .p-short-space {
+	margin-bottom: 7px;
+}
+
+#isi-container .p-medium-space {
+	margin-bottom: 13px;
+}
+
+#isi-container .p-large-space {
+	margin-bottom: 20px;
+}
+
+#isi-container .p-Xlarge-space {
+	margin-bottom: 30px;
+}
+
+#isi-container .p-indent {
+	margin-left: 19px;
+}
+
+#isi-container .p-double-indent {
+	margin-left: 19px;
+}
+
+#isi-container .p-triple-indent {
+	margin-left: 21px;
+}
+
+#isi-container span.bullet {
+	position: absolute;
+	font-size: 1.25em;
+	line-height: 1em;
+}
+
+#isi-container a {
+	text-decoration: none;
+}
+#isi-container b {
+	font-family: var(--fontFamily) !important;
+	font-optical-sizing: auto;
+}
+
+#isi .pointer {
+	cursor: pointer;
+}
+
+#isi-controls {
+	top: -11px;
+	right: 6px;
+	width: 7px;
+	height: inherit;
+}
+#arrowUp,
+#arrowDown {
+	left: 0px;
+	width: 7px;
+	height: 3px;
+	padding: 3px 0px 4px;
+	background: url('../img/arrow.png') center center;
+	cursor: pointer;
+}
+.scroller {
+	top: 0px;
+	right: -3px;
+	width: 9px;
+	height: 9px;
+	background: white;
+	-webkit-transition: top 0.08s;
+	-moz-transition: top 0.08s;
+	-ms-transition: top 0.08s;
+	-o-transition: top 0.08s;
+	transition: top 0.08s;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #999;
+	cursor: pointer;
+}
+ 
+.isiLineWithArrows,
+.isiLineNoArrows {
+	right: 3px;
+	cursor: pointer;
+}
+
+.isiLineNoArrows {
+	top: 15px;
+	width: 3px;
+	height: 80px;
+	background: #999;
+	border-radius: 3px;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.nonUnderline {
+	text-decoration: none !important;
+	color: var(--isiFontColor);
+}
+
+.noBr {
+	white-space: nowrap;
+}

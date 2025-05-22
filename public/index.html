@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador de Banners HTML5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 1000px; /* Edited  */
+      text-align: center;
+    }
+    input[type="file"] {
+      margin: 20px 0;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    #result {
+      margin-top: 20px;
+      text-align: left;
+      height: 100%; /* Edited  */
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+    }
+    .error {
+      color: red;
+    }
+    .warning {
+      color: orange;
+    }
+    .success {
+      color: green;
+    }
+    .report-container {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .report-container .status-success {
+      color: green;
+    }
+    .report-container .status-failure {
+      color: red;
+    }
+    .report-container .section {
+      margin: 20px 0;
+    }
+    .report-container .error {
+      color: red;
+    }
+    .report-container .warning {
+      color: orange;
+    }
+    .report-container ul {
+      margin: 10px 0;
+    }
+    .report-container iframe {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Validador de Banners HTML5</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="bannerInput" name="banners" accept=".zip" multiple required>
+      <button type="submit">Validar Banners</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      resultDiv.innerHTML = '<p>Validando...</p>';
+
+      const formData = new FormData(form);
+      try {
+        const response = await fetch('/validate', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error('Error en la validación: ' + response.statusText);
+        }
+
+        const data = await response.json();
+        displayResults(data);
+      } catch (error) {
+        resultDiv.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+      }
+    });
+
+    function displayResults(data) {
+      let html = '';
+      data.forEach(({ fileName, reportHtml }) => {
+        html += `
+          <div class="report-container">
+          <h2>Informe para ${fileName}</h2>
+            ${reportHtml}
+          </div>
+        `;
+      });
+      resultDiv.innerHTML = html;
+
+      // Ajustar URLs de iframes para que apunten al directorio correcto
+      const iframes = resultDiv.querySelectorAll('iframe');
+      iframes.forEach(iframe => {
+        const src = iframe.getAttribute('src');
+        if (src && src.startsWith('/reports/')) {
+          // Mantener la ruta relativa para que funcione en el servidor
+          iframe.src = src;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
